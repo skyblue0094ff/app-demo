@@ -1,0 +1,127 @@
+// global transition css
+
+/* fade */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.28s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
+}
+
+/* fade-transform */
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+  transition: all .5s;
+}
+
+.fade-transform-enter {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
+/* breadcrumb transition */
+.breadcrumb-enter-active,
+.breadcrumb-leave-active {
+  transition: all .5s;
+}
+
+.breadcrumb-enter,
+.breadcrumb-leave-active {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.breadcrumb-move {
+  transition: all .5s;
+}
+
+.breadcrumb-leave-active {
+  position: absolute;
+}
+
+// 动画组件 页面切换 左进左出
+.left-enter-active {
+  animation-name: left-in;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+}
+.left-leave-active {
+  animation-name: left-out;
+  animation-duration: .2s;
+  animation-timing-function: linear
+}
+@keyframes left-in {
+  0% {
+    transform: translate3d(-100%,0,0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(-50%,0,0);
+    opacity: .5;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    opacity: 0;
+  }
+}
+@keyframes left-out {
+  0% {
+    transform: translate3d(0,0,0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(50%,0,0);
+    opacity: .5;
+  }
+  100% {
+    transform: translate3d(100%,0,0);
+    opacity: 1;
+  }
+}
+// 动画组件 页面切换 左进左出
+.right-enter-active {
+  animation-name: right-in;
+  animation-duration: .2s;
+  animation-timing-function: linear
+}
+.right-leave-acitve {
+  animation-name: right-out;
+  animation-duration: .2s;
+  animation-timing-function: linear;
+}
+@keyframes right-in {
+  0% {
+    transform: translate3d(100%,0,0);
+    opacity: 1;
+  }
+  50% {
+    transform: translate3d(50%,0,0);
+    opacity: .5;
+  }
+  100% {
+    transform: translate3d(0,0,0);
+    opacity: 0;
+  }
+}
+@keyframes right-out {
+  0% {
+    transform: translate3d(0,0,0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate3d(-50%,0,0);
+    opacity: .5;
+  }
+  100% {
+    transform: translate3d(-100%,0,0);
+    opacity: 1;
+  }
+}
